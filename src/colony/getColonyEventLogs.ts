@@ -17,7 +17,6 @@ export const getColonyEventLogs = async () => {
 
   // Get the filters
   const domainAddedFilter = colonyClient.filters.DomainAdded(null);
-  // console.log("filters: ", colonyClient.filters);
 
   const colonyRoleSetFilter = colonyClient.filters.ColonyRoleSet(
     null,

@@ -1,15 +1,13 @@
 import React from "react";
 import { ColonyRole } from "@colony/colony-js";
+import { utils } from "ethers";
+import { BigNumber } from "ethers/utils";
 
 import {
   ColonyEventType,
   colonyTokenType,
   IColonyEventLog,
 } from "../colony/types";
-
-import { utils } from "ethers";
-import { BigNumber } from "ethers/utils";
-
 import styles from "./styles.module.css";
 
 const formatBigNumber = (bigNumber: BigNumber) =>

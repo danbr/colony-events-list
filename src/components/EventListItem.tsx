@@ -1,11 +1,7 @@
-// import { ListItem } from "./ListItem";
+import makeBlockie from "ethereum-blockies-base64";
+
 import { IColonyEventLog } from "../colony/types";
 import { EventTitle } from "./EventTitle";
-
-import makeBlockie from "ethereum-blockies-base64";
-// import {Blockies} from 'blockies/react-component';
-// const Blockies = require("blockies/react-component");
-
 import styles from "./styles.module.css";
 
 export const EventListItem = ({ eventLog }: { eventLog: IColonyEventLog }) => {
@@ -18,7 +14,7 @@ export const EventListItem = ({ eventLog }: { eventLog: IColonyEventLog }) => {
               eventLog.address ||
               eventLog.values.blockHash
           )}
-          alt="blockie"
+          alt="blockie avatar"
           className={styles.avatar}
         />
       </div>

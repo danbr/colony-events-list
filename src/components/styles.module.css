@@ -46,10 +46,10 @@
   overflow: hidden;
 }
 
-.eventTitle:hover{
-    overflow: visible; 
-    white-space: normal;
-    height:auto; 
+.eventTitle:hover {
+  overflow: visible;
+  white-space: normal;
+  height: auto;
 }
 
 .eventTitle > span {
