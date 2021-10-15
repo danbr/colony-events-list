@@ -1,6 +1,6 @@
 import makeBlockie from "ethereum-blockies-base64";
 
-import { IColonyEventLog } from "../colony/types";
+import { IColonyEventLog } from "../colonyDataProvider/types";
 import { EventTitle } from "./EventTitle";
 import styles from "./styles.module.css";
 

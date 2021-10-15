@@ -3,7 +3,7 @@
   margin: 100px auto;
   list-style: none;
   padding: 0px;
-  border-radius: 10px; /*inconsistency */
+  border-radius: 6px;
   background: white;
   overflow: hidden;
   box-shadow: 0px 0px 8px 1px rgba(62, 118, 244, 0.14);
@@ -11,21 +11,20 @@
 
 .dashboardMessage {
   height: 100vh;
-  padding: 20px 20px;
+  padding: 20px;
   display: flex;
   font-weight: bold;
 }
 
 .eventListItem {
+  margin: 1px;
   width: 100%;
   height: 90px;
-  /* padding: 26px 20px; - inconsistency*/
   background: white;
   display: flex;
   border: 0px solid rgba(62, 118, 244, 0.14);
   box-shadow: 0px 1px 8px 1px rgba(62, 118, 244, 0.14);
   font-size: 14px;
-  margin: 1px;
 }
 
 .subtitle {

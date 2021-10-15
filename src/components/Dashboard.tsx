@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import useAsyncEffect from "use-async-effect";
 
-import { IColonyEventLog } from "../colony/types";
-import { getColonyEventLogs } from "../colony/getColonyEventLogs";
+import { IColonyEventLog } from "../colonyDataProvider/types";
+import { getColonyEventLogs } from "../colonyDataProvider/getColonyEventLogs";
 import { EventListItem } from "./EventListItem";
 import styles from "./styles.module.css";
 
 const PAGE_SIZE = 10;
 
 export const Dashboard = () => {
-
   const [colonyEventLogs, setColonyEventLogs] =
     useState<readonly IColonyEventLog[]>();
   const [listItems, setListItems] = useState<IColonyEventLog[]>();

@@ -7,12 +7,10 @@ export const getUserAddressAndPotId = async (
   fundingPotId: BigNumber
 ) => {
   const humanReadableFundingPotId = new BigNumber(fundingPotId).toString();
-
   const { associatedTypeId } = await colonyClient.getFundingPot(
     humanReadableFundingPotId
   );
 
   const { recipient } = await colonyClient.getPayment(associatedTypeId);
-
   return { userAddress: recipient, humanReadableFundingPotId };
 };

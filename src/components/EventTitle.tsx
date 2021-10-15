@@ -1,17 +1,16 @@
 import React from "react";
 import { ColonyRole } from "@colony/colony-js";
-import { utils } from "ethers";
 import { BigNumber } from "ethers/utils";
 
 import {
   ColonyEventType,
   colonyTokenType,
   IColonyEventLog,
-} from "../colony/types";
+} from "../colonyDataProvider/types";
 import styles from "./styles.module.css";
 
 const formatBigNumber = (bigNumber: BigNumber) =>
-  new utils.BigNumber(bigNumber).toString();
+  new BigNumber(bigNumber).toString();
 
 export const EventTitle = ({ eventLog }: { eventLog: IColonyEventLog }) => {
   const {
@@ -33,7 +32,7 @@ export const EventTitle = ({ eventLog }: { eventLog: IColonyEventLog }) => {
     case ColonyEventType.ColonyRoleSet:
       return (
         <p className={styles.eventTitle}>
-          {/* ColonyRoleSet{" "} */}
+          {/* ColonyRoleSet */}
           <span>
             {ColonyRole[role]}
           </span> 
