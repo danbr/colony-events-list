@@ -6,7 +6,7 @@
   border-radius: 10px; /*inconsistency */
   background: white;
   overflow: hidden;
-  box-shadow: 0px 0px 4px 1px rgba(62, 118, 244, 0.14);
+  box-shadow: 0px 0px 8px 1px rgba(62, 118, 244, 0.14);
 }
 
 .dashboardMessage {
@@ -23,7 +23,7 @@
   background: white;
   display: flex;
   border: 0px solid rgba(62, 118, 244, 0.14);
-  box-shadow: 0px 0px 4px 1px rgba(62, 118, 244, 0.14);
+  box-shadow: 0px 1px 8px 1px rgba(62, 118, 244, 0.14);
   font-size: 14px;
   margin: 1px;
 }
