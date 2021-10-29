@@ -1,11 +1,11 @@
 import { getLogs, getBlockTime } from "@colony/colony-js";
 import { Log } from "ethers/providers";
+import { BigNumber } from "ethers/utils";
 
 import { getColonyClient } from "./getColonyClient";
-import { getUserAddressAndPotId } from "./getUserAddressAndPotId";
+import { getUserAddress } from "./getUserAddress";
 import { formatHexValueAmount } from "./formatHexValueAmount";
 import { ColonyEventType } from "./types";
-
 
 export const getColonyEventLogs = async () => {
   const colonyClient = await getColonyClient();
@@ -17,13 +17,14 @@ export const getColonyEventLogs = async () => {
     null,
     null,
     null,
-    null,
+    null
   );
 
   const colonyInitialisedFilter = colonyClient.filters.ColonyInitialised(
     null,
     null
   );
+
   const payoutClaimedFilter = colonyClient.filters.PayoutClaimed(
     null,
     null,
@@ -61,15 +62,21 @@ export const getColonyEventLogs = async () => {
       );
 
       if (eventLog.name === ColonyEventType.PayoutClaimed) {
-        const userAddressAndPotId = await getUserAddressAndPotId(
-          colonyClient,
-          eventLog.values.fundingPotId
-        );
         const payoutClaimed = formatHexValueAmount(eventLog.values.amount);
+        
+        const humanReadableFundingPotId = new BigNumber(
+          eventLog.values.fundingPotId
+        ).toString();
+
+        const userAddress = await getUserAddress(
+          colonyClient,
+          humanReadableFundingPotId
+          );
 
         return {
           ...eventLog,
-          ...userAddressAndPotId,
+          userAddress,
+          humanReadableFundingPotId,
           payoutClaimed,
           logTime,
         };
