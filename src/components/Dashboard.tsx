@@ -35,7 +35,7 @@ export const Dashboard = () => {
 
   return listItems === undefined ? (
     <div className={styles.dashboardMessage}>
-      Searching for events, please wait...
+      Searching for Colony Events, please wait...
     </div>
   ) : (
     <ul className={styles.dashboardList}>
